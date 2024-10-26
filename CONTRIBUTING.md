@@ -19,7 +19,7 @@ Please follow these code style guidelines when contributing:
 - Use meaningful variable and function names.
 
 ## Reporting Issues
-If you encounter a bug or have a feature request, please [open an issue](https://github.com/gloomystore/calcularjs/issues) on GitHub. Provide as much detail as possible, including steps to reproduce the problem.
+If you encounter a bug or have a feature request, please [open an issue](https://github.com/gloomystore/CalcularJS/issues) on GitHub. Provide as much detail as possible, including steps to reproduce the problem.
 
 ## Code of Conduct
 Please note that this project is governed by the [Code of Conduct](./CODE_OF_CONDUCT.md). By participating, you are expected to adhere to it.

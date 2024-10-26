@@ -1,4 +1,4 @@
-# calcularjs
+# CalcularJS
 
 `calcularjs` is a versatile JavaScript module for mathematical calculations, supporting CommonJS (CJS), ESModule (ESM), and browser environments. It provides a flexible way to evaluate mathematical expressions, making it ideal for projects requiring dynamic calculations.
 
@@ -7,13 +7,13 @@
 You can quickly evaluate mathematical expressions using template literals. Here’s a very simple example:
 
 ```javascript
-import calcularjs from 'calcularjs';
+import calcular from 'calcular';
 
 const thisIsTwo = 2;
 const thisIsThree = 3;
 const expression = `${thisIsTwo} + ${thisIsThree} + 3`;
 
-const result = calcularjs(expression);
+const result = calcular(expression);
 console.log(`The result of the expression "${expression}" is ${result}.`); // 8
 ```
 
@@ -23,7 +23,7 @@ Here’s a very simple example: (non module, CJS)
 <script>
   const a = 0.1
   const b = 0.2
-  const result = window.Calcular.calcularjs(`${a} + ${b}`);
+  const result = window.Calcular.calcular(`${a} + ${b}`);
   console.log(result) // 0.3
 </script>
 ```
@@ -35,7 +35,7 @@ For the above example, the output will be:
 The result of the expression "2 + 3 + 3" is 8.
 ```
 
-This demonstrates how you can use template literals to dynamically construct mathematical expressions and evaluate them with `calcularjs`.
+This demonstrates how you can use template literals to dynamically construct mathematical expressions and evaluate them with `calcular`.
 
 ## Features
 - Supports CJS and ESM module formats.
@@ -47,26 +47,26 @@ This demonstrates how you can use template literals to dynamically construct mat
 - Utilizes integer-based calculations to reduce the risk of errors caused by binary floating-point conversion.
 
 ## Installation
-To install `calcularjs`, run the following command:
+To install `calcular`, run the following command:
 
 ```bash
-npm install calcularjs
+npm install calcular
 ```
 
 ## Usage
-You can use `calcularjs` in both ESM and CJS environments. Here is an example of how to use it in a React application:
+You can use `calcular` in both ESM and CJS environments. Here is an example of how to use it in a React application:
 
 ```tsx
 import React, { useState } from 'react';
-import calcularjs, { isCaljsValid } from 'calcularjs';
+import calcular, { isCalcularValid } from 'calcular';
 
 const CalculatorComponent: React.FC = () => {
   const [expression, setExpression] = useState('');
   const [result, setResult] = useState<string | number>('');
 
   const handleCalculate = () => {
-    if (isCaljsValid(expression)) {
-      const calculationResult = calcularjs(expression);
+    if (isCalcularValid(expression)) {
+      const calculationResult = calcular(expression);
       setResult(calculationResult);
     } else {
       setResult('Invalid expression');
@@ -98,7 +98,7 @@ You can use template literals to dynamically create expressions. This is useful 
 
 ```tsx
 import React, { useState } from 'react';
-import calcularjs, { isCaljsValid } from 'calcularjs';
+import calcular, { isCalcularValid } from 'calcular';
 
 const TemplateLiteralCalculator: React.FC = () => {
   const [value1, setValue1] = useState(10);
@@ -108,8 +108,8 @@ const TemplateLiteralCalculator: React.FC = () => {
 
   const handleCalculate = () => {
     const expression = `${value1} ${operation} ${value2}`;
-    if (isCaljsValid(expression)) {
-      const calculationResult = calcularjs(expression);
+    if (isCalcularValid(expression)) {
+      const calculationResult = calcular(expression);
       setResult(calculationResult);
     } else {
       setResult('Invalid expression');
@@ -174,7 +174,7 @@ Result: Invalid expression
 
 ```javascript
 const expression = "Math.pow(2, 3) + Math.sqrt(16)";
-const result = calcularjs(expression);
+const result = calcular(expression);
 console.log(result); // Outputs: 12
 ```
 
@@ -190,13 +190,13 @@ console.log(0.1 + 0.2); // Outputs: 0.30000000000000004
 
 ## API
 
-### `calcularjs(expression: string): number`
+### `calcular(expression: string): number`
 Evaluates a mathematical expression and returns the result as a number.
 
 - **Parameters**: `expression` (string) - The mathematical expression to evaluate.
 - **Returns**: The result of the calculation as a number.
 
-### `isCaljsValid(expression: string): boolean`
+### `isCalcularValid(expression: string): boolean`
 Checks if a given mathematical expression is valid.
 
 - **Parameters**: `expression` (string) - The mathematical expression to validate.

@@ -7,5 +7,5 @@ All notable changes to this project will be documented in this file.
 - Initial release of calcularjs.
 - Supports arithmetic operations including addition, subtraction, multiplication, division, modulo, and exponentiation.
 - Handles nested expressions with operator precedence.
-- Functions to evaluate and validate expressions: `calcularjs()` and `isCaljsValid()`.
+- Functions to evaluate and validate expressions: `calcular()` and `isCalcularValid()`.
 - TypeScript type definitions for improved development experience.
