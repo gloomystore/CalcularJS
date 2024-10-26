@@ -1,6 +1,6 @@
 {
   "name": "calcularjs",
-  "version": "1.0.5",
+  "version": "1.0.7",
   "main": "dist/cjs/calcular.js",
   "module": "dist/esm/calcular.js",
   "browser": "dist/browser/calcular.js",

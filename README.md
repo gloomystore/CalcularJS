@@ -65,7 +65,7 @@ You can use `calcular` in both ESM and CJS environments. Here is an example of h
 
 ```tsx
 import React, { useState } from 'react';
-import calcular, { isCalcularValid } from 'calcularjs';
+import { calcular, isCalcularValid } from 'calcularjs';
 
 const CalculatorComponent: React.FC = () => {
   const [expression, setExpression] = useState('');
@@ -105,7 +105,7 @@ You can use template literals to dynamically create expressions. This is useful 
 
 ```tsx
 import React, { useState } from 'react';
-import calcular, { isCalcularValid } from 'calcularjs';
+import { calcular, isCalcularValid } from 'calcularjs';
 
 const TemplateLiteralCalculator: React.FC = () => {
   const [value1, setValue1] = useState(10);
