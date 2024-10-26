@@ -1,6 +1,6 @@
 {
   "name": "calcularjs",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "main": "dist/cjs/calcular.js",
   "module": "dist/esm/calcular.js",
   "browser": "dist/browser/calcular.js",
@@ -10,6 +10,11 @@
     "build:browser": "rollup -c",
     "build": "npm run build:cjs && npm run build:esm && npm run build:browser",
     "clean": "rm -rf dist"
+  },
+  "exports": {
+    "import": "./dist/esm/calcular.js",
+    "require": "./dist/cjs/calcular.js",
+    "browser": "./dist/browser/calcular.js"
   },
   "description": "A versatile JavaScript module that supports CJS, ESM, and browser environments.",
   "files": [
