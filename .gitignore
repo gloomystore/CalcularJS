@@ -1,0 +1,11 @@
+# .gitignore
+
+# Ignore all files and directories starting with a dot (.)
+.*
+
+# Explicitly allow .gitignore itself
+!.gitignore
+
+# Additional ignores
+calcular.ts
+node_modules/

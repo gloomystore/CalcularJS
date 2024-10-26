@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calcular Example</title>
+    <script src="./browser/cal.js"></script>
+    <script>
+      function calculate() {
+        // window 객체에 Calcular가 추가되었는지 확인
+        if (window.Calcular) {
+          const expression = document.getElementById("expression").value;
+          const result = window.Calcular.calcularjs(expression);
+          document.getElementById("result").textContent = `Result: ${result}`;
+        } else {
+          console.error("Calcular is not loaded.");
+        }
+      }
+      function keydown(e) {
+        if(e.key === 'Enter') {
+            calculate()
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <h1>Calcular Calculator</h1>
+    <input
+      type="text"
+      id="expression"
+      placeholder="Enter an expression, e.g., 2 + 3 * 4"
+      style="padding: 3px 5px; font-size: 16px; width: 300px"
+      onkeydown="keydown(event)"
+    />
+    <button onclick="calculate()">Calculate</button>
+    <p id="result">Result:</p>
+  </body>
+</html>

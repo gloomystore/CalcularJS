@@ -1,0 +1,58 @@
+{
+  "name": "calcularjs",
+  "version": "1.0.0",
+  "main": "dist/cjs/calcular.js",
+  "module": "dist/esm/calcular.js",
+  "browser": "dist/browser/calcular.js",
+  "scripts": {
+    "build:cjs": "tsc --module commonjs --outDir dist/cjs --target es5 --declaration",
+    "build:esm": "tsc --module esnext --outDir dist/esm --target es6 --declaration",
+    "build:browser": "rollup -c",
+    "build": "npm run build:cjs && npm run build:esm && npm run build:browser",
+    "clean": "rm -rf dist"
+  },
+  "description": "A versatile JavaScript module that supports CJS, ESM, and browser environments.",
+  "files": [
+    "dist/",
+    "LICENSE",
+    "package.json",
+    "README.md",
+    "CODE_OF_CONDUCT.md",
+    "CONTRIBUTING.md",
+    "CHANGELOG.md"
+  ],
+  "homepage": "https://www.gloomy-store.com",
+  "license": "GPL-3.0",
+  "keywords": [
+    "calculator",
+    "math",
+    "arithmetic",
+    "expression evaluator",
+    "JavaScript",
+    "TypeScript",
+    "calculation",
+    "math parser",
+    "numeric operations",
+    "math library",
+    "ESM",
+    "CJS",
+    "modular math",
+    "custom calculator",
+    "formula evaluation",
+    "math expression",
+    "number parser",
+    "math functions",
+    "calculation engine",
+    "math utilities"
+  ],
+  "author": "GloomyStore",
+  "copyright": "Copyright © 2024 gloomystore",
+  "type": "module",
+  "types": "dist/index.d.ts",
+  "devDependencies": {
+    "typescript": "^4.9.5",
+    "rollup": "^3.0.0",
+    "rollup-plugin-terser": "^7.0.0",
+    "rollup-plugin-obfuscator": "^2.0.3"
+  }
+}
