@@ -22,6 +22,13 @@ const result = calcular(expression);
 console.log(`The result of the expression "${expression}" is ${result}.`); // 8
 ```
 
+### Example Output
+For the above example, the output will be:
+
+```
+The result of the expression "2 + 3 + 3" is 8.
+```
+
 Here’s a very simple example: (non module, CJS)
 
 ```html
@@ -33,12 +40,7 @@ Here’s a very simple example: (non module, CJS)
 </script>
 ```
 
-### Example Output
-For the above example, the output will be:
 
-```
-The result of the expression "2 + 3 + 3" is 8.
-```
 
 This demonstrates how you can use template literals to dynamically construct mathematical expressions and evaluate them with `calcular`.
 
