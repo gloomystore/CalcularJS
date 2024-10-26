@@ -10,7 +10,7 @@
 You can quickly evaluate mathematical expressions using template literals. Here’s a very simple example:
 
 ```javascript
-import calcular from 'calcular';
+import calcular from 'calcularjs';
 
 const thisIsTwo = 2;
 const thisIsThree = 3;
@@ -53,7 +53,7 @@ This demonstrates how you can use template literals to dynamically construct mat
 To install `calcular`, run the following command:
 
 ```bash
-npm install calcular
+npm install calcularjs
 ```
 
 ## Usage
@@ -61,7 +61,7 @@ You can use `calcular` in both ESM and CJS environments. Here is an example of h
 
 ```tsx
 import React, { useState } from 'react';
-import calcular, { isCalcularValid } from 'calcular';
+import calcular, { isCalcularValid } from 'calcularjs';
 
 const CalculatorComponent: React.FC = () => {
   const [expression, setExpression] = useState('');
@@ -101,7 +101,7 @@ You can use template literals to dynamically create expressions. This is useful 
 
 ```tsx
 import React, { useState } from 'react';
-import calcular, { isCalcularValid } from 'calcular';
+import calcular, { isCalcularValid } from 'calcularjs';
 
 const TemplateLiteralCalculator: React.FC = () => {
   const [value1, setValue1] = useState(10);
