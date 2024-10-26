@@ -12,7 +12,7 @@
 You can quickly evaluate mathematical expressions using template literals. Here’s a very simple example:
 
 ```javascript
-import calcular from 'calcularjs';
+import { calcular } from 'calcularjs';
 
 const thisIsTwo = 2;
 const thisIsThree = 3;
