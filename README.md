@@ -1,5 +1,7 @@
 # CalcularJS
 
+## The Ultimate Precision Calculator: Perfect Calculations Without Floating-Point Errors!
+
 `calcularjs` is a versatile JavaScript module for mathematical calculations, supporting CommonJS (CJS), ESModule (ESM), and browser environments. It provides a flexible way to evaluate mathematical expressions, making it ideal for projects requiring dynamic calculations.
 
 ## Usage
