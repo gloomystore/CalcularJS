@@ -7,14 +7,13 @@ export default [
   {
     input: 'dist/cjs/calcular.js', // TypeScript 빌드 후의 CJS 파일
     output: {
-      file: 'dist/cjs/calcular.js',
+      file: 'dist/cjs/calcular.cjs',
       format: 'cjs',
     },
     plugins: [
       terser({
         compress: {
-          drop_console: true, // 모든 console.log 제거
-          pure_funcs: ['console.log'], // console.log 함수만 제거
+          pure_funcs: ['console.log'], // console.log만 제거
         },
         mangle: true,
       }),
@@ -26,7 +25,7 @@ export default [
         deadCodeInjectionThreshold: 0.4,
         debugProtection: false,
         debugProtectionInterval: false,
-        disableConsoleOutput: true,
+        disableConsoleOutput: false,
       }),
     ],
   },
@@ -40,8 +39,7 @@ export default [
     plugins: [
       terser({
         compress: {
-          drop_console: true, // 모든 console.log 제거
-          pure_funcs: ['console.log'], // console.log 함수만 제거
+          pure_funcs: ['console.log'], // console.log만 제거
         },
         mangle: true,
       }),
@@ -53,7 +51,7 @@ export default [
         deadCodeInjectionThreshold: 0.4,
         debugProtection: false,
         debugProtectionInterval: false,
-        disableConsoleOutput: true,
+        disableConsoleOutput: false,
       }),
     ],
   },
@@ -68,8 +66,7 @@ export default [
     plugins: [
       terser({
         compress: {
-          drop_console: true, // 모든 console.log 제거
-          pure_funcs: ['console.log'], // console.log 함수만 제거
+          pure_funcs: ['console.log'], // console.log만 제거
         },
         mangle: true,
       }),
@@ -81,7 +78,7 @@ export default [
         deadCodeInjectionThreshold: 0.4,
         debugProtection: false,
         debugProtectionInterval: false,
-        disableConsoleOutput: true,
+        disableConsoleOutput: false,
       }),
     ],
   },
