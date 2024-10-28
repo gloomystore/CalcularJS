@@ -10,7 +10,7 @@
         // window 객체에 Calcular가 추가되었는지 확인
         if (window.Calcular) {
           const expression = document.getElementById("expression").value;
-          const result = window.Calcular.calcular(expression);
+          const result = window.Calcular.calc(expression);
           document.getElementById("result").textContent = `Result: ${result}`;
         } else {
           console.error("Calcular is not loaded.");

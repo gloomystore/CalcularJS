@@ -2,7 +2,13 @@
 
 ## The Ultimate Precision Calculator: Perfect Calculations Without Floating-Point Errors!
 
-`calcularjs` is a versatile JavaScript module for mathematical calculations, supporting CommonJS (CJS), ESModule (ESM), and browser environments. It provides a flexible way to evaluate mathematical expressions, making it ideal for projects requiring dynamic calculations.
+`3 * (3 + 4)`  
+`21`
+
+`Math.pow(2,2) * (2 + 3)`  
+`20`
+
+`calcularjs` is a versatile JavaScript module for mathematical calculations, supporting ESModule (ESM) and browser environments. It provides a flexible way to evaluate mathematical expressions, making it ideal for projects requiring dynamic calculations.
 
 ## Usage
 ![Usage Example](https://github.com/gloomystore/CalcularJS/blob/main/use.gif?raw=true)
@@ -12,13 +18,13 @@
 You can quickly evaluate mathematical expressions using template literals. Here’s a very simple example:
 
 ```javascript
-import { calcular } from 'calcularjs';
+import { calc } from 'calcularjs';
 
 const thisIsTwo = 2;
 const thisIsThree = 3;
 const expression = `${thisIsTwo} + ${thisIsThree} + 3`;
 
-const result = calcular(expression);
+const result = calc(expression);
 console.log(`The result of the expression "${expression}" is ${result}.`); // 8
 ```
 
@@ -29,23 +35,22 @@ For the above example, the output will be:
 The result of the expression "2 + 3 + 3" is 8.
 ```
 
-Here’s a very simple example: (non module, CJS)
+### Example for Browser
+You can use `calcularjs` directly in the browser by including the following script tag:
 
 ```html
+<script src="https://gloomystore.github.io/CalcularJS/dist/browser/calcular.js"></script>
 <script>
-  const a = 0.1
-  const b = 0.2
-  const result = window.Calcular.calcular(`${a} + ${b}`);
-  console.log(result) // 0.3
+  const expression = '3 * (3 + 4)';
+  const result = window.Calcular.calc(expression);
+  console.log(`The result of the expression "${expression}" is ${result}.`); // 21
 </script>
 ```
-
-
 
 This demonstrates how you can use template literals to dynamically construct mathematical expressions and evaluate them with `calcular`.
 
 ## Features
-- Supports CJS and ESM module formats.
+- Supports ESM module formats.
 - Evaluate arithmetic expressions including addition, subtraction, multiplication, division, modulo, and exponentiation.
 - Handles nested expressions and respects operator precedence.
 - Supports browser and Node.js environments.
@@ -61,19 +66,19 @@ npm install calcularjs
 ```
 
 ## Usage
-You can use `calcular` in both ESM and CJS environments. Here is an example of how to use it in a React application:
+You can use `calcular` in ESM environments. Here is an example of how to use it in a React application:
 
 ```tsx
 import React, { useState } from 'react';
-import { calcular, isCalcularValid } from 'calcularjs';
+import { calc, isCalcValid } from 'calcularjs';
 
 const CalculatorComponent: React.FC = () => {
   const [expression, setExpression] = useState('');
   const [result, setResult] = useState<string | number>('');
 
   const handleCalculate = () => {
-    if (isCalcularValid(expression)) {
-      const calculationResult = calcular(expression);
+    if (isCalcValid(expression)) {
+      const calculationResult = calc(expression);
       setResult(calculationResult);
     } else {
       setResult('Invalid expression');
@@ -105,7 +110,7 @@ You can use template literals to dynamically create expressions. This is useful 
 
 ```tsx
 import React, { useState } from 'react';
-import { calcular, isCalcularValid } from 'calcularjs';
+import { calc, isCalcValid } from 'calcularjs';
 
 const TemplateLiteralCalculator: React.FC = () => {
   const [value1, setValue1] = useState(10);
@@ -115,8 +120,8 @@ const TemplateLiteralCalculator: React.FC = () => {
 
   const handleCalculate = () => {
     const expression = `${value1} ${operation} ${value2}`;
-    if (isCalcularValid(expression)) {
-      const calculationResult = calcular(expression);
+    if (isCalcValid(expression)) {
+      const calculationResult = calc(expression);
       setResult(calculationResult);
     } else {
       setResult('Invalid expression');
@@ -181,7 +186,7 @@ Result: Invalid expression
 
 ```javascript
 const expression = "Math.pow(2, 3) + Math.sqrt(16)";
-const result = calcular(expression);
+const result = calc(expression);
 console.log(result); // Outputs: 12
 ```
 
@@ -197,13 +202,13 @@ console.log(0.1 + 0.2); // Outputs: 0.30000000000000004
 
 ## API
 
-### `calcular(expression: string): number`
+### `calc(expression: string): number`
 Evaluates a mathematical expression and returns the result as a number.
 
 - **Parameters**: `expression` (string) - The mathematical expression to evaluate.
 - **Returns**: The result of the calculation as a number.
 
-### `isCalcularValid(expression: string): boolean`
+### `isCalcValid(expression: string): boolean`
 Checks if a given mathematical expression is valid.
 
 - **Parameters**: `expression` (string) - The mathematical expression to validate.

@@ -2,11 +2,20 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.1.0] - 2024-10-28
+### Changed
+- Removed the CommonJS version (`.cjs`), simplifying the export structure and focusing on modern module support.
+- `calcular(string)` -> `calc(string)`
+- `isCalcularValid(string)` -> `isCalcValid(string)`
+
+### Fixed
+- Resolved a bug that caused the `calcular` function to incorrectly validate expressions containing numbers with two or more digits, ensuring smoother handling of such cases.
+
 ## [1.0.9] - 2024-10-27
 ### Added
 - Improved `calcular` function to better handle various mathematical expressions, including those with spaces and nested parentheses.
 - Enhanced error handling with detailed error messages using `console.error`, providing context on why the error occurred and the expression that caused it.
-- Added more robust validation checks in `isCalcularValid` to detect invalid sequences, such as missing operators between numbers or unmatched parentheses.
+- Added more robust validation checks in `isCalcValid` to detect invalid sequences, such as missing operators between numbers or unmatched parentheses.
 - Introduced support for handling `Math` functions (e.g., `Math.pow`, `Math.sqrt`), allowing them to be evaluated correctly within expressions.
 
 ### Changed
@@ -32,5 +41,5 @@ All notable changes to this project will be documented in this file.
 - Initial release of calcularjs.
 - Supports arithmetic operations including addition, subtraction, multiplication, division, modulo, and exponentiation.
 - Handles nested expressions with operator precedence.
-- Functions to evaluate and validate expressions: `calcular()` and `isCalcularValid()`.
+- Functions to evaluate and validate expressions: `calcular()` and `isCalcValid()`.
 - TypeScript type definitions for improved development experience.
