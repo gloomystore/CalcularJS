@@ -10,8 +10,16 @@
 
 `calcularjs` is a versatile JavaScript module for mathematical calculations, supporting ESModule (ESM) and browser environments. It provides a flexible way to evaluate mathematical expressions, making it ideal for projects requiring dynamic calculations.
 
-## Usage
+# install
+```
+npm i calcularjs
+```
+
+## Usage &amp; Sample &amp; try
 ![Usage Example](https://github.com/gloomystore/CalcularJS/blob/main/use.gif?raw=true)
+
+<a href="https://gloomystore.github.io/CalcularJS/index.html">https://gloomystore.github.io/CalcularJS/index.html</a>
+
 
 ## Simple Usage Example
 
