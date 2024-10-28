@@ -5,9 +5,9 @@ import obfuscator from 'rollup-plugin-obfuscator';
 export default [
   // ESModule (ESM) 빌드 설정
   {
-    input: 'dist/esm/calcular.js', // TypeScript 빌드 후의 ESM 파일
+    input: 'dist/calcular.js', // TypeScript 빌드 후의 ESM 파일
     output: {
-      file: 'dist/esm/calcular.js',
+      file: 'dist/calcular.js',
       format: 'esm',
     },
     plugins: [
@@ -31,7 +31,7 @@ export default [
   },
   // 브라우저용 빌드 설정
   {
-    input: 'dist/esm/calcular.js', // 브라우저용으로 빌드할 원본 파일
+    input: 'dist/calcular.js', // 브라우저용으로 빌드할 원본 파일
     output: {
       file: 'dist/browser/calcular.js',
       format: 'iife', // 즉시 실행 함수 형태로 브라우저 환경에서 사용

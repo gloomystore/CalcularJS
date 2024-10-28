@@ -1,1 +1,215 @@
-function r(e,t){const o=n();return(r=function(r,e){return o[r-=461]})(e,t)}!function(){const e=r,t=n();for(;;)try{if(871104===-parseInt(e(492))/1*(-parseInt(e(486))/2)+-parseInt(e(481))/3*(parseInt(e(495))/4)+parseInt(e(468))/5+parseInt(e(477))/6*(-parseInt(e(461))/7)+-parseInt(e(480))/8*(-parseInt(e(502))/9)+parseInt(e(494))/10*(-parseInt(e(496))/11)+-parseInt(e(473))/12*(parseInt(e(465))/13))break;t.push(t.shift())}catch(r){t.push(t.shift())}}();const e=e=>{const n=r;if(!t(e))return console.error(n(493)+e),NaN;function o(r){const e=n;if(typeof r===e(503))return{value:r,multiplier:1};if(r[e(483)](".")){return{value:parseFloat(r),multiplier:1}}return{value:parseInt(r,10),multiplier:1}}function a(r,e,t){const o=n,a=r[o(488)],i=e.value;let s=0;switch(t){case"+":s=a+i;break;case"-":s=a-i;break;case"*":s=a*i;break;case"/":if(0===i)throw new Error(o(499));s=a/i;break;case"%":s=a%i;break;case"^":s=Math[o(482)](a,i);break;default:throw new Error("Unknown operator: "+t)}return{value:s,multiplier:1}}e=e.replace(/\s+/g,"");try{return function r(e){const t=n;let i;const s=1e3;let c=0;for(i=/Math\.(\w+)\(([^)]*)\)/;i[t(467)](e);){if(++c>s)throw new Error(t(470));e=e.replace(i,((r,n,o)=>{const a=t;try{if("function"==typeof Math[n]){if(!o||""===o[a(501)]())throw new Error(a(490)+n);const r=o[a(474)](",").map((r=>parseFloat(r[a(501)]())));return Math[n](...r).toString()}throw new Error(a(487)+n)}catch(r){throw console[a(497)]("Error evaluating Math method ("+n+a(485)+e,r),r}}))}for(c=0;e[t(483)]("(");){if(++c>s)throw new Error(t(498));e=e[t(504)](/\(([^()]+)\)/g,((n,o)=>{const a=t;try{return r(o)[a(471)]()}catch(r){throw console[a(497)](a(469)+o+") in expression: "+e,r),r}}))}for(c=0,i=/(-?\d+(\.\d+)?)\^(-?\d+(\.\d+)?)/;i[t(467)](e);){if(++c>s)throw new Error(t(491));e=e[t(504)](i,((r,n,i,s)=>{const c=t;try{const r=o(n);return a(r,o(s),"^")[c(488)][c(471)]()}catch(r){throw console[c(497)]("Error performing exponentiation ("+n+" ^ "+s+c(485)+e,r),r}}))}for(i=/(-?\d+(\.\d+)?)([*/%])(-?\d+(\.\d+)?)/;i[t(467)](e);){if(++c>s)throw new Error("Maximum iterations reached while evaluating multiplication/division");e=e[t(504)](i,((r,n,i,s,c)=>{const u=t;try{const r=o(n);return a(r,o(c),s)[u(488)][u(471)]()}catch(r){throw console.error(u(462)+n+" "+s+" "+c+") in expression: "+e,r),r}}))}for(i=/(-?\d+(\.\d+)?)(\s*[+-]\s*)(-?\d+(\.\d+)?)/;i[t(467)](e);){if(++c>s)throw new Error(t(476));e=e[t(504)](i,((r,n,i,s,c)=>{const u=t;try{const r=o(n),e=o(c);return a(r,e,s[u(501)]()).value[u(471)]()}catch(r){throw console[u(497)](u(489)+n+" "+s+" "+c+") in expression: "+e,r),r}}))}return o(e).value}(e)}catch(r){return console[n(497)](n(466)+e,r.message),NaN}},t=e=>{const t=r;e=e.replace(/\s+/g,"");const n=[];for(let r of e)if("("===r)n[t(484)](r);else if(")"===r){if(0===n[t(478)])return console[t(497)](t(475)+e),!1;n[t(463)]()}if(0!==n[t(478)])return console[t(497)](t(500)+e),!1;if(/[^0-9+\-*/%^().,Math\w]/[t(467)](e))return console.error(t(479)+e),!1;if(/(\d+\s*\()|(\)\s*\d+)|(\d\s+\d)/[t(467)](e))return console[t(497)](t(472)+e),!1;const o=e.replace(/Math\.\w+\([^()]*\)/g,"0");return!(!/^(\d+(\.\d+)?|Math\.\w+\([^()]*\)|\([^()]+\)|[+\-*/%^])+$/[t(467)](e)&&!/^[-+*/%^()0-9.]+$/[t(467)](o))||(console[t(497)](t(464)+e),!1)};function n(){const r=["number","replace","1787884TQlEko","Error performing operation (","pop","The expression format is invalid: ","247EEZBtL","Error in calculation for expression: ","test","3703555UVOfeU","Error evaluating sub-expression (","Maximum iterations reached while evaluating Math methods","toString","Invalid sequence of numbers and parentheses in expression: ","249060asgLGB","split","Unmatched closing parenthesis in expression: ","Maximum iterations reached while evaluating addition/subtraction","30fwxIgF","length","Invalid characters found in expression: ","104azKhVE","6CNVJkS","pow","includes","push",") in expression: ","2729086IEryDI","Unknown Math method: ","value","Error performing addition/subtraction (","Invalid arguments for Math method: ","Maximum iterations reached while evaluating exponentiation","1tWqgCg","Invalid expression: ","170yTOsud","73884ZOEYpX","766205vnFvVF","error","Maximum iterations reached while evaluating parentheses","Division by zero!","Unmatched opening parenthesis in expression: ","trim","1148076TjQrqo"];return(n=function(){return r})()}export{e as calc,e as default,t as isCalcValid};
+const calc = (expression) => {
+    // isCalcValid를 사용하여 입력 유효성 검사
+    if (!isCalcValid(expression)) {
+        console.error(`Invalid expression: ${expression}`);
+        return NaN; // 유효하지 않은 수식일 경우 NaN 반환
+    }
+    expression = expression.replace(/\s+/g, ''); // 수식에서 모든 공백 제거
+    // 문자열을 파싱하여 숫자 형태로 반환하는 함수
+    function parseNumber(numStr) {
+        if (typeof numStr === 'number') {
+            return { value: numStr, multiplier: 1 };
+        }
+        // 소수점을 포함한 경우
+        if (numStr.includes('.')) {
+            const floatVal = parseFloat(numStr);
+            return { value: floatVal, multiplier: 1 };
+        }
+        else {
+            // 정수인 경우
+            return { value: parseInt(numStr, 10), multiplier: 1 };
+        }
+    }
+    // 두 숫자와 연산자를 받아 계산을 수행하는 함수
+    function performOperation(num1, num2, operator) {
+        const int1 = num1.value;
+        const int2 = num2.value;
+        let resultValue = 0;
+        switch (operator) {
+            case '+':
+                resultValue = int1 + int2;
+                break;
+            case '-':
+                resultValue = int1 - int2;
+                break;
+            case '*':
+                resultValue = int1 * int2;
+                break;
+            case '/':
+                if (int2 === 0)
+                    throw new Error('Division by zero!');
+                resultValue = int1 / int2;
+                break;
+            case '%':
+                resultValue = int1 % int2;
+                break;
+            case '^':
+                resultValue = Math.pow(int1, int2);
+                break;
+            default:
+                throw new Error(`Unknown operator: ${operator}`);
+        }
+        return { value: resultValue, multiplier: 1 };
+    }
+    // 수식을 평가하여 결과를 반환하는 함수
+    function evaluate(expression) {
+        let regex;
+        const MAX_ITERATIONS = 1000; // 최대 반복 횟수 설정
+        let iterationCount = 0;
+        // Math 메서드 호출 처리
+        regex = /Math\.(\w+)\(([^)]*)\)/;
+        while (regex.test(expression)) {
+            if (++iterationCount > MAX_ITERATIONS) {
+                throw new Error('Maximum iterations reached while evaluating Math methods');
+            }
+            expression = expression.replace(regex, (match, methodName, args) => {
+                try {
+                    if (typeof Math[methodName] === 'function') {
+                        // 인자가 없거나 올바르지 않은 형식인지 확인
+                        if (!args || args.trim() === '') {
+                            throw new Error(`Invalid arguments for Math method: ${methodName}`);
+                        }
+                        const argValues = args.split(',').map((arg) => parseFloat(arg.trim()));
+                        const result = Math[methodName](...argValues);
+                        return result.toString();
+                    }
+                    else {
+                        throw new Error(`Unknown Math method: ${methodName}`);
+                    }
+                }
+                catch (error) {
+                    console.error(`Error evaluating Math method (${methodName}) in expression: ${expression}`, error);
+                    throw error;
+                }
+            });
+        }
+        iterationCount = 0; // 반복 횟수 초기화
+        // 괄호 안의 표현식을 먼저 계산
+        while (expression.includes('(')) {
+            if (++iterationCount > MAX_ITERATIONS) {
+                throw new Error('Maximum iterations reached while evaluating parentheses');
+            }
+            expression = expression.replace(/\(([^()]+)\)/g, (match, subExpr) => {
+                try {
+                    return evaluate(subExpr).toString();
+                }
+                catch (error) {
+                    console.error(`Error evaluating sub-expression (${subExpr}) in expression: ${expression}`, error);
+                    throw error;
+                }
+            });
+        }
+        iterationCount = 0; // 반복 횟수 초기화
+        // 거듭제곱 연산 처리
+        regex = /(-?\d+(\.\d+)?)\^(-?\d+(\.\d+)?)/;
+        while (regex.test(expression)) {
+            if (++iterationCount > MAX_ITERATIONS) {
+                throw new Error('Maximum iterations reached while evaluating exponentiation');
+            }
+            expression = expression.replace(regex, (match, num1, _, num2) => {
+                try {
+                    const parsedNum1 = parseNumber(num1);
+                    const parsedNum2 = parseNumber(num2);
+                    const result = performOperation(parsedNum1, parsedNum2, '^');
+                    return result.value.toString();
+                }
+                catch (error) {
+                    console.error(`Error performing exponentiation (${num1} ^ ${num2}) in expression: ${expression}`, error);
+                    throw error;
+                }
+            });
+        }
+        // 곱셈, 나눗셈, 나머지 연산 처리
+        regex = /(-?\d+(\.\d+)?)([*/%])(-?\d+(\.\d+)?)/;
+        while (regex.test(expression)) {
+            if (++iterationCount > MAX_ITERATIONS) {
+                throw new Error('Maximum iterations reached while evaluating multiplication/division');
+            }
+            expression = expression.replace(regex, (match, num1, _, operator, num2) => {
+                try {
+                    const parsedNum1 = parseNumber(num1);
+                    const parsedNum2 = parseNumber(num2);
+                    const result = performOperation(parsedNum1, parsedNum2, operator);
+                    return result.value.toString();
+                }
+                catch (error) {
+                    console.error(`Error performing operation (${num1} ${operator} ${num2}) in expression: ${expression}`, error);
+                    throw error;
+                }
+            });
+        }
+        // 덧셈, 뺄셈 연산 처리
+        regex = /(-?\d+(\.\d+)?)(\s*[+-]\s*)(-?\d+(\.\d+)?)/;
+        while (regex.test(expression)) {
+            if (++iterationCount > MAX_ITERATIONS) {
+                throw new Error('Maximum iterations reached while evaluating addition/subtraction');
+            }
+            expression = expression.replace(regex, (match, num1, _, operator, num2) => {
+                try {
+                    const parsedNum1 = parseNumber(num1);
+                    const parsedNum2 = parseNumber(num2);
+                    const cleanOperator = operator.trim(); // 공백 제거
+                    const result = performOperation(parsedNum1, parsedNum2, cleanOperator);
+                    return result.value.toString();
+                }
+                catch (error) {
+                    console.error(`Error performing addition/subtraction (${num1} ${operator} ${num2}) in expression: ${expression}`, error);
+                    throw error;
+                }
+            });
+        }
+        const parsedResult = parseNumber(expression);
+        return parsedResult.value;
+    }
+    try {
+        return evaluate(expression);
+    }
+    catch (error) {
+        console.error(`Error in calculation for expression: ${expression}`, error.message);
+        return NaN;
+    }
+};
+// 유효성 검증 함수
+const isCalcValid = (expression) => {
+    expression = expression.replace(/\s+/g, ''); // 공백 제거
+    const stack = [];
+    for (let char of expression) {
+        if (char === '(') {
+            stack.push(char);
+        }
+        else if (char === ')') {
+            if (stack.length === 0) {
+                console.error(`Unmatched closing parenthesis in expression: ${expression}`);
+                return false;
+            }
+            stack.pop();
+        }
+    }
+    if (stack.length !== 0) {
+        console.error(`Unmatched opening parenthesis in expression: ${expression}`);
+        return false;
+    }
+    // 유효하지 않은 문자가 포함되었는지 검사
+    if (/[^0-9+\-*/%^().,Math\w]/.test(expression)) {
+        console.error(`Invalid characters found in expression: ${expression}`);
+        return false;
+    }
+    // 숫자와 연산자 사이의 관계를 검사
+    const invalidSequenceRegex = /(\d+\s*\()|(\)\s*\d+)|(\d\s+\d)/;
+    if (invalidSequenceRegex.test(expression)) {
+        console.error(`Invalid sequence of numbers and parentheses in expression: ${expression}`);
+        return false;
+    }
+    // 최종적인 형식 검사
+    const validFormat = /^(\d+(\.\d+)?|Math\.\w+\([^()]*\)|\([^()]+\)|[+\-*/%^])+$/;
+    const mathFunctionRegex = /Math\.\w+\([^()]*\)/g;
+    const expressionWithoutMathFunctions = expression.replace(mathFunctionRegex, '0');
+    const validSimpleFormat = /^[-+*/%^()0-9.]+$/;
+    if (!validFormat.test(expression) && !validSimpleFormat.test(expressionWithoutMathFunctions)) {
+        console.error(`The expression format is invalid: ${expression}`);
+        return false;
+    }
+    return true;
+};
+export { calc, isCalcValid };
+export default calc;
